@@ -6,7 +6,7 @@
 /*   By: yegpark <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 17:05:25 by yegpark           #+#    #+#             */
-/*   Updated: 2023/05/05 18:34:29 by yegpark          ###   ########.fr       */
+/*   Updated: 2023/05/10 18:51:14 by yegpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
+	int	i;
+
+	i = 0;
+	while (s[i])
 	{
-		ft_putchar_fd(*s, fd);
-		s++;
+		ft_putchar_fd(s[i], fd);
+		i++;
 	}
 }

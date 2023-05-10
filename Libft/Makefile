@@ -1,6 +1,6 @@
 NAME = libft.a
 
-SRCS = # have to include all the source files later!
+SRCS = ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c ft_striteri.c main.c 
 
 OBJS = ${SRCS:.c=.o}
 
@@ -19,12 +19,15 @@ ${NAME}: ${OBJS}
 ${OBJS}: ${SRCS}
 	cc -c ${SRCS} ${FLAGS} libft.h
 
+test: ${OBJS}
+	cc -o TEST ${SRCS} ${FLAGS}
+
 clean:
 	rm -f ${OBJS}
 
 fclean: clean
-	rm -f ${NAME}
+	rm -f ${NAME} TEST
 
 re: fclean all
 
-.PHONY: all clean fclean
+.PHONY: all clean fclean test
