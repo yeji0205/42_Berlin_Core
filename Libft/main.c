@@ -30,6 +30,24 @@ int main(void)
 
 	ft_putendl_fd(str, 1);
 
-	char str1[] = "ft_striteri";
+	char str1[] = "hello";
 	ft_striteri(str1, test_striteri);
+
+	printf("%zu\n", ft_strlen(str1));
+
+	printf("%d\n", ft_isalpha('c'));
+	printf("%d\n", ft_isalpha(4));
+
+	printf("%d\n", ft_isdigit('c'));
+	printf("%d\n", ft_isdigit('4'));
+
+	printf("%d\n", ft_isalnum('c'));
+	printf("%d\n", ft_isalnum('#'));
+
+	printf("%d\n", ft_isascii('c'));
+
+	printf("%d\n", ft_isprint('\a'));
+
+	printf("%d\n", ft_strncmp(str, str1, 3));
+
 }

@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yegpark <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 19:09:35 by yegpark           #+#    #+#             */
-/*   Updated: 2023/05/11 15:11:33 by yegpark          ###   ########.fr       */
+/*   Created: 2023/05/11 16:53:42 by yegpark           #+#    #+#             */
+/*   Updated: 2023/05/11 17:35:07 by yegpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_isascii(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (*s)
+	while (0 <= c && c <= 127)
 	{
-		i++;
-		s++;
+		return (1);
 	}
-	return (i);
+	return (0);
 }
