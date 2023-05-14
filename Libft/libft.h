@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:34:13 by yegpark           #+#    #+#             */
-/*   Updated: 2023/05/11 18:14:41 by yegpark          ###   ########.fr       */
+/*   Updated: 2023/05/14 19:29:23 by yegipark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,19 @@ int	ft_isalnum(int c);
 int	ft_isascii(int c);
 int	ft_isprint(int c);
 size_t	ft_strlen(const char *s);
-// void	*ft_memset (void *block, int c, size_t size);
-// void	ft_bzero (void *block, size_t size);
-// void	*ft_memcpy (void *restrict to, const void *restrict from, size_t size);
-// void	*ft_memmove (void *to, const void *from, size_t size);
-// size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-// size_t	ft_strlcat(char *dst, const char *src, size_t size);
+void	*ft_memset(void *dest, int c, size_t len);
+void	ft_bzero(void *dest, size_t len);
+void	*ft_memcpy(void *dest, const void *src, size_t len);
+void	*ft_memmove(void *dest, const void *src, size_t len);
+size_t	ft_strlcpy(char *dst, const char *src, size_t len);
+// size_t	ft_strlcat(char *dst, const char *src, size_t len);
 // int	ft_toupper (int c);
 // int	ft_tolower (int c);
 // char	*ft_strchr (const char *string, int c);
 // char	*ft_strrchr (const char *string, int c);
-int	ft_strncmp (const char *s1, const char *s2, size_t size);
-// void	*ft_memchr (const void *block, int c, size_t size);
-// int	ft_memcmp (const void *a1, const void *a2, size_t size);
+// int	ft_strncmp (const char *s1, const char *s2, size_t len);
+// void	*ft_memchr (const void *block, int c, size_t len);
+// int	ft_memcmp (const void *a1, const void *a2, size_t len);
 // char	*ft_strnstr(const char *big, const char *little, size_t len);
 // int	ft_atoi (const char *string);
 // void	*ft_calloc (size_t count, size_t eltsize);

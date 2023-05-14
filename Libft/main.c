@@ -20,11 +20,11 @@ void	test_striteri(unsigned int i, char *c)
 
 int main(void)
 {
-	char str[] = "test!";
+	char str[] = "test! again!";
 
-	ft_putstr_fd(str, 1);	
-	
-	write(1, " ", 1);
+	ft_putstr_fd(str, 1);
+
+	write(1, " ", 2);
 
 	ft_putnbr_fd(4, 1);
 
@@ -38,16 +38,32 @@ int main(void)
 	printf("%d\n", ft_isalpha('c'));
 	printf("%d\n", ft_isalpha(4));
 
-	printf("%d\n", ft_isdigit('c'));
-	printf("%d\n", ft_isdigit('4'));
+	printf("digit? %d\n", ft_isdigit('c'));
+	printf("digit? ('4'=52) %d\n", ft_isdigit('4')); //
 
-	printf("%d\n", ft_isalnum('c'));
-	printf("%d\n", ft_isalnum('#'));
+	printf("isalnum? %d\n", ft_isalnum('c')); // 1
+	printf("isalnum? %d\n", ft_isalnum('#')); // 0
 
-	printf("%d\n", ft_isascii('c'));
+	printf("is it ASCii? %d\n", ft_isascii('c')); // 1
 
-	printf("%d\n", ft_isprint('\a'));
+	printf("pritable? %d\n", ft_isprint('a')); // 1
+	printf("pritable? %d\n", ft_isprint('\n')); // 0
 
-	printf("%d\n", ft_strncmp(str, str1, 3));
+	char mem[] = "memset test";
+	ft_memset(mem, 'A', 6);
+	printf("%s\n", mem); // "AAAAAA test"
+
+	// ft_bzero returns NONE
+	ft_bzero(mem, 5);
+	printf("Nothing should come: %c\n", mem[2]); // NONE
+	printf("%c\n", mem[8]); // e
+
+	ft_memcpy(str, str1, 5);
+	printf("original: test! again! -> %s\n", str); // "hello again!"
+
+	char mem1[] = "memmmove";
+	char mem2[] = "hell";
+	ft_memmove(mem1, mem2, 4);
+	printf("memmmove -> %s\n", mem1); // "hellmove"
 
 }
