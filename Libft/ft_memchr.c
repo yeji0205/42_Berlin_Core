@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/14 18:38:16 by yegipark          #+#    #+#             */
-/*   Updated: 2023/05/24 17:59:00 by yegpark          ###   ########.fr       */
+/*   Created: 2023/05/24 16:06:55 by yegpark           #+#    #+#             */
+/*   Updated: 2023/05/24 16:47:51 by yegpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+void	*ft_memchr(const void *block, int c, size_t size)
 {
-	unsigned char	*new_dest;
-	const unsigned char	*new_src;
+	unsigned char *new_block;
+	size_t i;
 
-	new_dest = (unsigned char *)dest;
-	new_src = (const unsigned char *)src;
-	if (dest == src)
+	new_block = (unsigned char *)block;
+	i = 0;
+	while (*new_block && i < size)
 	{
-		return (dest);
-	}
-	if (dest < src)
-	{
-		return (ft_memcpy(dest, src, len));
-	}
-	else
-	{
-		while (0 < len)
+		if (*new_block == (unsigned char)c) 
 		{
-			new_dest[len - 1] = new_src[len - 1];
-			len--;
+			return (new_block); 
 		}
-		return (dest);
-	}
+		new_block++;
+		i++;
+	}	
+	return (0);
 }

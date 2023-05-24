@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/14 18:38:16 by yegipark          #+#    #+#             */
-/*   Updated: 2023/05/24 17:59:00 by yegpark          ###   ########.fr       */
+/*   Created: 2023/05/24 15:43:45 by yegpark           #+#    #+#             */
+/*   Updated: 2023/05/24 15:55:31 by yegpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+char	*ft_strrchr(const char *string, int c)
 {
-	unsigned char	*new_dest;
-	const unsigned char	*new_src;
+	int len_str;
 
-	new_dest = (unsigned char *)dest;
-	new_src = (const unsigned char *)src;
-	if (dest == src)
+	len_str = ft_strlen(string) - 1;
+	while (string[len_str])
 	{
-		return (dest);
-	}
-	if (dest < src)
-	{
-		return (ft_memcpy(dest, src, len));
-	}
-	else
-	{
-		while (0 < len)
+		if (string[len_str] == (char)c)
 		{
-			new_dest[len - 1] = new_src[len - 1];
-			len--;
+			return (char *)(string + len_str); 	
 		}
-		return (dest);
-	}
+		len_str--;
+	}	
+	return (0);
 }

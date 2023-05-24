@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/14 18:38:16 by yegipark          #+#    #+#             */
-/*   Updated: 2023/05/24 17:59:00 by yegpark          ###   ########.fr       */
+/*   Created: 2023/05/24 16:53:54 by yegpark           #+#    #+#             */
+/*   Updated: 2023/05/24 17:08:44 by yegpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+int	ft_memcmp(const void *a1, const void *a2, size_t size)
 {
-	unsigned char	*new_dest;
-	const unsigned char	*new_src;
+	size_t	i;
+	unsigned char *new_a1;
+	unsigned char *new_a2;
 
-	new_dest = (unsigned char *)dest;
-	new_src = (const unsigned char *)src;
-	if (dest == src)
+	new_a1 = (unsigned char *)a1;
+	new_a2 = (unsigned char *)a2;
+
+	if (size == 0)
 	{
-		return (dest);
+		return (0);
 	}
-	if (dest < src)
+	i = 0;
+	while (*new_a1 && *new_a2 && *new_a1 == *new_a2 && (i < size - 1))
 	{
-		return (ft_memcpy(dest, src, len));
+		new_a1++;
+		new_a2++;
+		i++;
 	}
-	else
-	{
-		while (0 < len)
-		{
-			new_dest[len - 1] = new_src[len - 1];
-			len--;
-		}
-		return (dest);
-	}
+	return (*new_a1 - *new_a2);
 }

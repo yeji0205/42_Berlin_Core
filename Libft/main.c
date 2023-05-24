@@ -1,6 +1,8 @@
 #include "libft.h"
 #include <unistd.h>
 #include <stdio.h>
+#include <string.h>
+
 
 void	test_striteri(unsigned int i, char *c)
 {
@@ -65,5 +67,23 @@ int main(void)
 	char mem2[] = "hell";
 	ft_memmove(mem1, mem2, 4);
 	printf("memmmove -> %s\n", mem1); // "hellmove"
+
+	char strlcat_src[] = "saysomthing";
+	char strlcat_dst[10] = "goods";
+
+	printf("return (5+11) : %zu, dst(goodssay) : %s\n", ft_strlcat(strlcat_dst,strlcat_src,9), strlcat_dst);    
+	//결과 : return (5+11) : 16, dst(goodssays) :  goodssays
+	printf("%c, %c, %c, %c,\n", ft_toupper('a'), ft_toupper('@'), ft_tolower('A'), ft_toupper('?'));  
+	printf("helloworld -> %s\n",ft_strchr("helloworld", 'o'));
+	printf("helloworld -> %s\n",ft_strrchr("helloworld", 'o'));
+
+	printf("%d, %d\n",strncmp("abcd", "abcd", 3), strncmp("abCd", "abcd", 3));
+	printf("%d, %d\n",ft_strncmp("abcd", "abcd", 3), ft_strncmp("abCd", "abcd", 3));
+
+	char *ret = ft_memchr("helloworld", 'o', 10);
+	printf("helloworld -> %s\n",ret);
+
+	printf("%d, %d\n",ft_memcmp("abcd", "abcd", 3), ft_memcmp("abCd", "abc", 3));
+
 
 }

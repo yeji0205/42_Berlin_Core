@@ -6,7 +6,7 @@
 /*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 17:41:53 by yegpark           #+#    #+#             */
-/*   Updated: 2023/05/11 18:16:37 by yegpark          ###   ########.fr       */
+/*   Updated: 2023/05/24 16:01:28 by yegpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t size)
 {
-	unsigned int	i;
+	size_t	i;
 
 	if (size == 0)
 	{
