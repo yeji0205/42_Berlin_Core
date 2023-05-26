@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 15:27:56 by yegpark           #+#    #+#             */
-/*   Updated: 2023/05/24 15:34:51 by yegpark          ###   ########.fr       */
+/*   Updated: 2023/05/26 14:24:25 by yegipark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower (int c)
+int	ft_tolower(int c)
 {
 	if ('A' <= c && c <= 'Z')
 	{

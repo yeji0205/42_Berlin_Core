@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 17:09:48 by yegpark           #+#    #+#             */
-/*   Updated: 2023/05/24 18:17:46 by yegpark          ###   ########.fr       */
+/*   Updated: 2023/05/26 17:35:02 by yegipark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,27 @@
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	/*
-	if little is empty -> return big
-	if little not in big -> NULL
-	if little is in big -> where little character starting
-	*/
-	int	i;
-	int	j;
-	int	k;
-	
+	size_t	str_i;
+	size_t	find_i;
+	size_t	count;
+
+	str_i = 0;
+	find_i = 0;
 	if (!*to_find)
-	{
 		return ((char *)str);
-	}
-	i = 0;
-	while (str[i])
+	while (str[str_i] && (str_i < len))
 	{
-		j = 0;
-		k = 0;
-		while ((str[i] == to_find[j]) && (j < ft_strlen(to_find)))
+		count = 0;
+		while (str[str_i] == to_find[find_i])
 		{
-			if (k == (ft_strlen(to_find) - 1))
-			{
-				i = i - (ft_strlen(to_find) - 1);
-				return (&str[i]);
-			}
-			j++;
-			k++;
-			i++;
+			if (count == (ft_strlen(to_find) - 1))
+				str_i = str_i - (ft_strlen(to_find) - 1);
+				return ((char *)&str[str_i]);
+			str_i++;
+			find_i++;
+			count++;
 		}
-		i = i - (k - 1);
+		str_i = str_i - (count - 1);
 	}
 	return (0);
 }

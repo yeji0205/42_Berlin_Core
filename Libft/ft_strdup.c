@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/24 15:43:45 by yegpark           #+#    #+#             */
-/*   Updated: 2023/05/26 14:41:34 by yegipark         ###   ########.fr       */
+/*   Created: 2023/05/27 00:38:03 by yegipark          #+#    #+#             */
+/*   Updated: 2023/05/27 01:35:29 by yegipark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *string, int c)
+char	*ft_strdup(const char *str)
 {
-	int	len_str;
+	char	*copy_str;
+	size_t	len;
+	size_t	i;
 
-	len_str = ft_strlen(string) - 1;
-	while (string[len_str])
+	len = ft_strlen(str);
+	copy_str = (char *)malloc(1 * (len + 1));
+	if (!copy_str)
+		return (0);
+	i = 0;
+	while (str[i])
 	{
-		if (string[len_str] == (char)c)
-		{
-			return ((char *)(string + len_str));
-		}
-		len_str--;
+		copy_str[i] = str[i];
+		i++;
 	}
-	if (c == '\0')
-	{
-		return ((char *)string + len_str);
-	}
-	return (0);
+	copy_str[i] = 0;
+	return (copy_str);
 }

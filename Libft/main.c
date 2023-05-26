@@ -71,19 +71,37 @@ int main(void)
 	char strlcat_src[] = "saysomthing";
 	char strlcat_dst[10] = "goods";
 
-	printf("return (5+11) : %zu, dst(goodssay) : %s\n", ft_strlcat(strlcat_dst,strlcat_src,9), strlcat_dst);    
+	printf("return (5+11) : %zu, dst(goodssay) : %s\n", ft_strlcat(strlcat_dst,strlcat_src,9), strlcat_dst);
 	//결과 : return (5+11) : 16, dst(goodssays) :  goodssays
-	printf("%c, %c, %c, %c,\n", ft_toupper('a'), ft_toupper('@'), ft_tolower('A'), ft_toupper('?'));  
+	printf("%c, %c, %c, %c,\n", ft_toupper('a'), ft_toupper('@'), ft_tolower('A'), ft_toupper('?'));
 	printf("helloworld -> %s\n",ft_strchr("helloworld", 'o'));
 	printf("helloworld -> %s\n",ft_strrchr("helloworld", 'o'));
 
 	printf("%d, %d\n",strncmp("abcd", "abcd", 3), strncmp("abCd", "abcd", 3));
 	printf("%d, %d\n",ft_strncmp("abcd", "abcd", 3), ft_strncmp("abCd", "abcd", 3));
 
-	char *ret = ft_memchr("helloworld", 'o', 10);
+	char	*ret = ft_memchr("helloworld", 'o', 10);
 	printf("helloworld -> %s\n",ret);
 
 	printf("%d, %d\n",ft_memcmp("abcd", "abcd", 3), ft_memcmp("abCd", "abc", 3));
 
+	char	*ret1 = ft_strnstr("helloschennnn", "schen", 11);
+	printf("helloschennnn -> %s\n", ret1);
 
+	printf("atoi: ---+--456 -> %d\n", ft_atoi("---+--456"));
+
+	int *a;
+	a = (int*)ft_calloc(3, sizeof(int));
+	int i;
+	for(i = 0; i < 3; i++)
+	{
+		printf("calloc %d\n", a[i]);
+	}
+	free(a);
+
+	char *result;
+	char *strdup_s = "Hello world";
+   	result = ft_strdup(strdup_s);
+	printf("strdup: Hello world ->  %s\n", result);
+	free(result);
 }

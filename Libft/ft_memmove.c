@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:38:16 by yegipark          #+#    #+#             */
-/*   Updated: 2023/05/24 17:59:00 by yegpark          ###   ########.fr       */
+/*   Updated: 2023/05/26 14:29:09 by yegipark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	unsigned char	*new_dest;
+	unsigned char		*new_dest;
 	const unsigned char	*new_src;
 
 	new_dest = (unsigned char *)dest;
