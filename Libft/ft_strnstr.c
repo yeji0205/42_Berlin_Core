@@ -6,7 +6,7 @@
 /*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 17:09:48 by yegpark           #+#    #+#             */
-/*   Updated: 2023/05/26 17:35:02 by yegipark         ###   ########.fr       */
+/*   Updated: 2023/05/27 02:02:03 by yegipark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 		while (str[str_i] == to_find[find_i])
 		{
 			if (count == (ft_strlen(to_find) - 1))
-				str_i = str_i - (ft_strlen(to_find) - 1);
-				return ((char *)&str[str_i]);
+				return ((char *)&str[str_i - count]);
 			str_i++;
 			find_i++;
 			count++;

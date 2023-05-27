@@ -6,7 +6,7 @@
 /*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 16:06:55 by yegpark           #+#    #+#             */
-/*   Updated: 2023/05/26 14:40:50 by yegipark         ###   ########.fr       */
+/*   Updated: 2023/05/27 01:57:55 by yegipark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *block, int c, size_t size)
 
 	new_block = (unsigned char *)block;
 	i = 0;
-	while (*new_block && (i < size))
+	while (i < size)
 	{
 		if (*new_block == (unsigned char)c)
 		{
