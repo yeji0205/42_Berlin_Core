@@ -74,8 +74,8 @@ int main(void)
 	printf("return (5+11) : %zu, dst(goodssay) : %s\n", ft_strlcat(strlcat_dst,strlcat_src,9), strlcat_dst);
 	//결과 : return (5+11) : 16, dst(goodssays) :  goodssays
 	printf("%c, %c, %c, %c,\n", ft_toupper('a'), ft_toupper('@'), ft_tolower('A'), ft_toupper('?'));
-	printf("helloworld -> %s\n",ft_strchr("helloworld", 'o'));
-	printf("helloworld -> %s\n",ft_strrchr("helloworld", 'o'));
+	printf("strchr: helloworld -> %s\n",ft_strchr("helloworld", 'o'));
+	printf("strrchr: helloworld -> %s\n",ft_strrchr("helloworld", 'o'));
 
 	printf("%d, %d\n",strncmp("abcd", "abcd", 3), strncmp("abCd", "abcd", 3));
 	printf("%d, %d\n",ft_strncmp("abcd", "abcd", 3), ft_strncmp("abCd", "abcd", 3));
@@ -104,4 +104,15 @@ int main(void)
    	result = ft_strdup(strdup_s);
 	printf("strdup: Hello world ->  %s\n", result);
 	free(result);
+
+	char *result_sub;
+	result_sub = ft_substr(strdup_s, 6, 3);
+	printf("substr: Hello world, 6, 3 -> %s\n", result_sub);
+
+	char	*pre = "welcome";
+	char	*suf = " to the world!";
+	char	*res_join;
+	res_join = ft_strjoin(pre, suf);
+	printf("strjoin: %s\n", res_join);
+
 }

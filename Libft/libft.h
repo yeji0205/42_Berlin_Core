@@ -6,7 +6,7 @@
 /*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:34:13 by yegpark           #+#    #+#             */
-/*   Updated: 2023/05/27 01:31:57 by yegipark         ###   ########.fr       */
+/*   Updated: 2023/05/29 02:38:48 by yegipark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_isprint(int c);
 size_t	ft_strlen(const char *s);
 void	*ft_memset (void *block, int c, size_t size);
 void	ft_bzero(void *block, size_t size);
-void	*ft_memcpy(void *restrict to, const void *restrict from, size_t size);
+void	*ft_memcpy(void *dest, const void *src, size_t len);
 void	*ft_memmove(void *to, const void *from, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t len);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
@@ -45,9 +45,9 @@ void	*ft_calloc(size_t numb_block, size_t size_block);
 char	*ft_strdup(const char *str);
 
 ///////// Additional functions /////////
-//char	*ft_substr(char const *s, unsigned int start, size_t len);
-//char	*ft_strjoin(char const *s1, char const *s2);
-//char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
 //char	**ft_split(char const *s, char c);
 //char	*ft_itoa(int n);
 //char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
