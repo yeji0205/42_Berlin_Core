@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 01:57:40 by yegipark          #+#    #+#             */
-/*   Updated: 2023/05/29 02:38:36 by yegipark         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:43:18 by yegpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*joined;
 
 	len = ft_strlen(s1) + ft_strlen(s2);
-	joined = malloc(sizeof(char) * len);
+	joined = (char *)malloc(sizeof(char) * (len + 1));
 	i = 0;
 	if (joined)
 	{
@@ -37,5 +37,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (joined);
 	}
 	return (0);
-
 }

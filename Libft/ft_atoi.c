@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 17:38:03 by yegipark          #+#    #+#             */
-/*   Updated: 2023/05/26 23:05:49 by yegipark         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:11:32 by yegpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,10 @@ int	ft_atoi(const char *str)
 	{
 		i++;
 	}
-	while (str[i] && ((str[i] == '-') || (str[i] == '+')))
+	if (str[i] && ((str[i] == '-') || (str[i] == '+')))
 	{
 		if (str[i] == '-')
-		{
 			sign *= -1;
-		}
 		i++;
 	}
 	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
