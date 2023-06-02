@@ -38,7 +38,7 @@ static char	*ft_extract_word(char const *s, char c)
 	i = 0;
 	while (s[i] && s[i] != c)
 		i++;
-	ptr = (char *)malloc((i + 1) * 1);
+	ptr = (char *)malloc((i + 1) * sizeof(char);
 	if (!ptr)
 		return (0);
 	ptr = ft_substr(s, 0, i);
