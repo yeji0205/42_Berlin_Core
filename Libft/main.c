@@ -20,6 +20,26 @@ void	test_striteri(unsigned int i, char *c)
 	}
 } */
 
+// int	ft_len_num(int n)
+// {
+// 	int	num;
+// 	int	len;
+
+// 	num = n;
+// 	len = 0;
+// 	if (n < 0)
+// 	{
+// 		num = -num;
+// 		len++;
+// 	}
+// 	while (num != 0)
+// 	{
+// 		num /= 10;
+// 		len++;
+// 	}
+// 	return (len);
+// }
+
 int main(void)
 {
 	char str[] = "test! again!";
@@ -130,4 +150,20 @@ int main(void)
 	char *trim_res;
 	trim_res = ft_strtrim(trim_s1, trim_set);
 	printf("strtrim s1[21abc23d12] with set[12] -> %s\n", trim_res);
+
+	char	*to_split = "der die das denen";
+	char	**splited = ft_split(to_split, ' ');
+	for(int i = 0; splited[i] != NULL; i++)
+	{
+		printf("%s\n", splited[i]);
+	}
+
+	int number1 = -12345;
+	int number2 = 102345;
+	int number3 = 0;
+	printf("ft_itoa: %s\n", ft_itoa(number1));
+	printf("ft_itoa: %s\n", ft_itoa(number2));
+	printf("ft_itoa: %s\n", ft_itoa(number3));
+
+
 }

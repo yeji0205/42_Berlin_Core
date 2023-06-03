@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 19:45:35 by yegpark           #+#    #+#             */
-/*   Updated: 2023/06/02 18:56:10 by yegpark          ###   ########.fr       */
+/*   Updated: 2023/06/03 11:58:47 by yegipark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static char	*ft_extract_word(char const *s, char c)
 	i = 0;
 	while (s[i] && s[i] != c)
 		i++;
-	ptr = (char *)malloc((i + 1) * sizeof(char);
+	ptr = (char *)malloc((i + 1) * sizeof(char));
 	if (!ptr)
 		return (0);
 	ptr = ft_substr(s, 0, i);
@@ -59,7 +59,7 @@ static void	ft_free_error(char **result)
 	free(to_free);
 }
 
-static void ft_fuck_25lines(char const *s, char c, char **res)
+static void	ft_fuck_25lines(char const *s, char c, char **res)
 {
 	size_t	res_i;
 
@@ -72,7 +72,7 @@ static void ft_fuck_25lines(char const *s, char c, char **res)
 			if (!res[res_i])
 			{
 				ft_free_error(res);
-				return;
+				return ;
 			}
 			res_i++;
 			while (*s && *s != c)

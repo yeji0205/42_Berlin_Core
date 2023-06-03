@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 02:18:34 by yegipark          #+#    #+#             */
-/*   Updated: 2023/05/31 19:01:02 by yegpark          ###   ########.fr       */
+/*   Updated: 2023/06/03 01:00:07 by yegipark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (0);
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
-	sub = (char *)malloc(1 * (len + 1));
+	sub = (char *)malloc(sizeof(char) * (len + 1));
 	i = 0;
 	if (sub)
 	{
