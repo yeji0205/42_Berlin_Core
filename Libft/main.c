@@ -4,41 +4,16 @@
 #include <string.h>
 
 
-void	test_striteri(unsigned int i, char *c)
+void	help_striteri(unsigned int i, char *c)
 {
 	printf("Index: %u, Character: %c\n", i, *c);
 }
-/* void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+
+char	help_strmapi(unsigned int i, char c)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		f(i, &s[i]);
-		i++;
-	}
-} */
-
-// int	ft_len_num(int n)
-// {
-// 	int	num;
-// 	int	len;
-
-// 	num = n;
-// 	len = 0;
-// 	if (n < 0)
-// 	{
-// 		num = -num;
-// 		len++;
-// 	}
-// 	while (num != 0)
-// 	{
-// 		num /= 10;
-// 		len++;
-// 	}
-// 	return (len);
-// }
+	c += i;
+	return (c);
+}
 
 int main(void)
 {
@@ -53,7 +28,7 @@ int main(void)
 	ft_putendl_fd(str, 1);
 
 	char str1[] = "hello";
-	ft_striteri(str1, test_striteri);
+	ft_striteri(str1, help_striteri);
 
 	printf("%zu\n", ft_strlen(str1));
 
@@ -165,5 +140,7 @@ int main(void)
 	printf("ft_itoa: %s\n", ft_itoa(number2));
 	printf("ft_itoa: %s\n", ft_itoa(number3));
 
+	char *res_strmapi = ft_strmapi("hello", help_strmapi);
+	printf("ft_strmapi: hello -> %s\n", res_strmapi);
 
 }
