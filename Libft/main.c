@@ -167,7 +167,23 @@ int main(void)
 		copy_list = copy_list->next;
 	}
 
+	t_list *size_list = list;
 	printf("-ft_lstsize\n");
-	printf("%d\n", ft_lstsize(list));
+	printf("%d\n", ft_lstsize(size_list));
+
+	t_list *last_list = list;
+	char	*lastnode = ft_lstlast(last_list)->content;
+	printf("-ft_lstlast\n");
+	printf("%s\n", lastnode);
+
+	printf("-ft_lstadd_back\n");
+	t_list *node4 = ft_lstnew("node4");
+	ft_lstadd_back(&list, node4);
+	t_list *addback_list = list;
+	while (addback_list != NULL)
+	{
+		printf("Content: %s\n", (char *)(addback_list->content));
+		addback_list = addback_list->next;
+	}
 
 }
