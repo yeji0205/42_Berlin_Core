@@ -6,7 +6,7 @@
 
 void	help_striteri(unsigned int i, char *c)
 {
-	printf("Index: %u, Character: %c\n", i, *c);
+	printf("striteri- Index: %u, Character: %c\n", i, *c);
 }
 
 char	help_strmapi(unsigned int i, char c)
@@ -18,17 +18,7 @@ char	help_strmapi(unsigned int i, char c)
 int main(void)
 {
 	char str[] = "test! again!";
-
-	ft_putstr_fd(str, 1);
-
-	write(1, " ", 2);
-
-	ft_putnbr_fd(4, 1);
-
-	ft_putendl_fd(str, 1);
-
 	char str1[] = "hello";
-	ft_striteri(str1, help_striteri);
 
 	printf("%zu\n", ft_strlen(str1));
 
@@ -142,5 +132,42 @@ int main(void)
 
 	char *res_strmapi = ft_strmapi("hello", help_strmapi);
 	printf("ft_strmapi: hello -> %s\n", res_strmapi);
+
+	ft_striteri(str1, help_striteri);
+
+	ft_putstr_fd(str, 1);
+
+	write(1, " ", 2);
+
+	ft_putnbr_fd(4, 1);
+
+	ft_putendl_fd(str, 1);
+
+	printf("\nBONUS--------------------\n\n");
+
+	t_list *node1 = ft_lstnew("node1");
+	char *content = (char *)(node1->content);
+	printf("-ft_lstnew\n");
+	printf("Content of the node: %s\n", content);
+
+	t_list *node2 = ft_lstnew("node2");
+	t_list *node3 = ft_lstnew("node3");
+
+	t_list *list = NULL;
+
+	ft_lstadd_front(&list, node3);
+	ft_lstadd_front(&list, node2);
+    	ft_lstadd_front(&list, node1);
+
+	printf("-ft_lstadd_front\n");
+	t_list *copy_list = list;
+	while (copy_list != NULL)
+	{
+		printf("Content: %s\n", (char *)(copy_list->content));
+		copy_list = copy_list->next;
+	}
+
+	printf("-ft_lstsize\n");
+	printf("%d\n", ft_lstsize(list));
 
 }

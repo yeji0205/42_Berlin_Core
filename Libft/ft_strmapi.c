@@ -6,7 +6,7 @@
 /*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 11:59:26 by yegipark          #+#    #+#             */
-/*   Updated: 2023/06/03 18:09:16 by yegipark         ###   ########.fr       */
+/*   Updated: 2023/06/07 13:38:43 by yegipark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (s[i])
 	{
-		new_str[i] = (*f)(i, s[i]);
+		new_str[i] = f(i, s[i]);
 		i++;
 	}
 	new_str[i] = '\0';
