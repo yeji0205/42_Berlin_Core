@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 11:59:26 by yegipark          #+#    #+#             */
-/*   Updated: 2023/06/07 13:38:43 by yegipark         ###   ########.fr       */
+/*   Updated: 2023/06/08 14:54:31 by yegpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
 	unsigned int	len;
-	char	*new_str;
+	char			*new_str;
 
 	len = ft_strlen(s);
 	new_str = (char *)malloc(sizeof(char) * (len + 1));

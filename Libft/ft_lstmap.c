@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/14 16:05:16 by yegipark          #+#    #+#             */
-/*   Updated: 2023/06/02 16:07:11 by yegpark          ###   ########.fr       */
+/*   Created: 2023/06/08 18:18:20 by yegpark           #+#    #+#             */
+/*   Updated: 2023/06/08 18:21:15 by yegpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *dest, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
-
-	i = 0;
-	while (i < len)
-	{
-		((unsigned char *)dest)[i] = '\0';
-		i++;
-	}
+	if (!lst)
+		return (0);
+	
 }

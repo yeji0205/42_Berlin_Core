@@ -15,6 +15,26 @@ char	help_strmapi(unsigned int i, char c)
 	return (c);
 }
 
+void	del(void *content)
+{
+	// Cast the content pointer to the appropriate type
+	char *value = (char *)content;
+
+	// Print the value before freeing the memory
+	printf("Deleting value: %s\n", value);
+
+	// Free the memory
+	free(content);
+}
+
+void print_content(void *content)
+{
+    printf("%s\n", (char *)content);
+}
+
+
+
+
 int main(void)
 {
 	char str[] = "test! again!";
@@ -145,13 +165,13 @@ int main(void)
 
 	printf("\nBONUS--------------------\n\n");
 
-	t_list *node1 = ft_lstnew("node1");
+	t_list *node1 = ft_lstnew("content for node1");
 	char *content = (char *)(node1->content);
 	printf("-ft_lstnew\n");
 	printf("Content of the node: %s\n", content);
 
-	t_list *node2 = ft_lstnew("node2");
-	t_list *node3 = ft_lstnew("node3");
+	t_list *node2 = ft_lstnew("content for node2");
+	t_list *node3 = ft_lstnew("content for node3");
 
 	t_list *list = NULL;
 
@@ -177,7 +197,7 @@ int main(void)
 	printf("%s\n", lastnode);
 
 	printf("-ft_lstadd_back\n");
-	t_list *node4 = ft_lstnew("node4");
+	t_list *node4 = ft_lstnew("content for node4");
 	ft_lstadd_back(&list, node4);
 	t_list *addback_list = list;
 	while (addback_list != NULL)
@@ -185,5 +205,11 @@ int main(void)
 		printf("Content: %s\n", (char *)(addback_list->content));
 		addback_list = addback_list->next;
 	}
+
+	printf("-ft_lstdelone\n");
+	ft_lstdelone(node2, del);
+
+	
+
 
 }

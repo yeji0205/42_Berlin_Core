@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/03 01:01:10 by yegipark          #+#    #+#             */
-/*   Updated: 2023/06/03 11:58:53 by yegipark         ###   ########.fr       */
+/*   Created: 2023/06/08 14:46:29 by yegpark           #+#    #+#             */
+/*   Updated: 2023/06/08 15:00:01 by yegpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ char	*ft_itoa(int n)
 	int		n_str;
 	char	*str;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	len = ft_len_num(n);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)

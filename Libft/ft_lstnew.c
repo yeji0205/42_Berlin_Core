@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 14:19:48 by yegipark          #+#    #+#             */
-/*   Updated: 2023/06/07 15:11:44 by yegipark         ###   ########.fr       */
+/*   Updated: 2023/06/08 14:52:05 by yegpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstnew(void *content)
 	t_list	*new_node;
 
 	new_node = (t_list *)malloc(sizeof(t_list));
-	if(!new_node)
+	if (!new_node)
 		return (0);
 	new_node->content = content;
 	new_node->next = 0;
