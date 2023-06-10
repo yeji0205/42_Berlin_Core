@@ -14,28 +14,24 @@ B_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.
 OBJS = ${SRCS:.c=.o}
 B_OBJS = ${B_SRCS:.c=.o}
 
-FLAGS = -Wall -Wextra -Werror
+CC = cc
 
-all:	${NAME} bonus
+CFLAGS = -Wall -Wextra -Werror
 
 ${NAME}: ${OBJS}
-	ar rcs ${NAME} ${OBJS}
-
-${OBJS}: ${SRCS}
-	cc -c ${SRCS} ${FLAGS} libft.h
+	@ar rcs ${NAME} ${OBJS}
 
 bonus: ${B_OBJS}
 	ar rcs ${NAME} ${B_OBJS}
 
-${B_OBJS}: ${B_SRCS}
-	cc -c ${B_SRCS} ${FLAGS} libft.h
+all:	${NAME}
 
 clean:
 	rm -f ${OBJS}
 	rm -f ${B_OBJS}
 
 fclean: clean
-	rm -f ${NAME} TEST
+	rm -f ${NAME} 
 
 re: fclean all
 
