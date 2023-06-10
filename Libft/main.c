@@ -19,19 +19,25 @@ void	del(void *content)
 {
 	// Cast the content pointer to the appropriate type
 	char *value = (char *)content;
-
 	// Print the value before freeing the memory
 	printf("Deleting value: %s\n", value);
 
-	// Free the memory
-	free(content);
+}
+
+void *transform_content(void *content)
+{
+    int *value = (int *)content;
+    int *new_value = malloc(sizeof(int));
+    if (new_value)
+        *new_value = (*value) * 2;
+    return new_value;
 }
 
 void print_content(void *content)
 {
-    printf("%s\n", (char *)content);
+    char *value = (char *)content;
+    printf("%s\n ", value);
 }
-
 
 
 
@@ -121,8 +127,8 @@ int main(void)
 	free(result);
 
 	char *result_sub;
-	result_sub = ft_substr(strdup_s, 0, 11);
-	printf("substr: Hello world, 0, 11 -> %s\n", result_sub);
+	result_sub = ft_substr(strdup_s, 6, 11);
+	printf("substr: Hello world, 6, 11 -> %s\n", result_sub);
 
 	char	*pre = "welcome";
 	char	*suf = " to the world!";
@@ -140,7 +146,7 @@ int main(void)
 	char	**splited = ft_split(to_split, ' ');
 	for(int i = 0; splited[i] != NULL; i++)
 	{
-		printf("%s\n", splited[i]);
+		printf("ft_splited: %s\n", splited[i]);
 	}
 
 	int number1 = -12345;
@@ -167,7 +173,7 @@ int main(void)
 
 	t_list *node1 = ft_lstnew("content for node1");
 	char *content = (char *)(node1->content);
-	printf("-ft_lstnew\n");
+	printf("---ft_lstnew---\n");
 	printf("Content of the node: %s\n", content);
 
 	t_list *node2 = ft_lstnew("content for node2");
@@ -179,7 +185,7 @@ int main(void)
 	ft_lstadd_front(&list, node2);
     	ft_lstadd_front(&list, node1);
 
-	printf("-ft_lstadd_front\n");
+	printf("---ft_lstadd_front---\n");
 	t_list *copy_list = list;
 	while (copy_list != NULL)
 	{
@@ -188,15 +194,15 @@ int main(void)
 	}
 
 	t_list *size_list = list;
-	printf("-ft_lstsize\n");
+	printf("---ft_lstsize---\n");
 	printf("%d\n", ft_lstsize(size_list));
 
 	t_list *last_list = list;
 	char	*lastnode = ft_lstlast(last_list)->content;
-	printf("-ft_lstlast\n");
+	printf("---ft_lstlast---\n");
 	printf("%s\n", lastnode);
 
-	printf("-ft_lstadd_back\n");
+	printf("---ft_lstadd_back---\n");
 	t_list *node4 = ft_lstnew("content for node4");
 	ft_lstadd_back(&list, node4);
 	t_list *addback_list = list;
@@ -206,10 +212,48 @@ int main(void)
 		addback_list = addback_list->next;
 	}
 
-	printf("-ft_lstdelone\n");
+	printf("---ft_lstdelone---\n");
 	ft_lstdelone(node2, del);
 
-	
 
+	printf("---ft_lstclear---\n");
+	// Create some nodes for testing
+	t_list *clear_node1 = ft_lstnew("clear_Node1");
+	t_list *clear_node2 = ft_lstnew("clear_Node2");
+	t_list *clear_node3 = ft_lstnew("clear_Node3");
 
+	// Build the list
+	t_list *clear_list = clear_node1;
+	clear_node1->next = clear_node2;
+	clear_node2->next = clear_node3;
+
+	// Print the initial list
+	printf("Initial List:\n");
+	t_list *curr_clear = list;
+	while (curr_clear)
+	{
+		printf("%s\n", (char *)curr_clear->content);
+		curr_clear = curr_clear->next;
+	}
+
+	// Clear the list using ft_lstclear()
+	ft_lstclear(&clear_list, del);
+
+	printf("---ft_lstmap---\n");
+	// 	t_list *list_map = ft_lstnew("list_map");
+	// 	ft_lstadd_back(&list, ft_lstnew("World"));
+	// 	ft_lstadd_back(&list, ft_lstnew("Welcome"));
+	// 	ft_lstadd_back(&list, ft_lstnew("to"));
+	// 	ft_lstadd_back(&list, ft_lstnew("OpenAI"));
+
+	// 	// Print the original list
+	// 	printf("Original list: ");
+	// 	ft_lstiter(list_map, print_content);
+	// 	printf("\n");
+
+	// 	// t_list	*after_map = ft_lstmap(list_map, transform_content, del);
+	// 	// // Print the transformed list
+	// 	// printf("Transformed list: ");
+	// 	// ft_lstiter(after_map, print_content);
+	// 	// printf("\n");
 }

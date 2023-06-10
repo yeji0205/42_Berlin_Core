@@ -7,36 +7,36 @@ SRCS = ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c \
 	ft_strrchr.c ft_strncmp.c ft_strlcpy.c ft_memchr.c ft_memcmp.c \
 	ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c \
 	ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
-	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c\
-	ft_lstdelone.c ft_lstiter.c \
-	main.c
+
+B_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c\
+	ft_lstdelone.c ft_lstiter.c ft_lstclear.c ft_lstmap.c \
 
 OBJS = ${SRCS:.c=.o}
+B_OBJS = ${B_SRCS:.c=.o}
 
 FLAGS = -Wall -Wextra -Werror
 
-all:	${NAME}
+all:	${NAME} bonus
 
-#${NAME}: ${SRCS}
-#	cc -o ${NAME} ${SRCS} -Ilibft.h ${FLAGS}
-
-#making a static library ar is the command and rcs mean replace, create and sorted
 ${NAME}: ${OBJS}
 	ar rcs ${NAME} ${OBJS}
 
-#compile the source code so that we have object files to use to create a library
 ${OBJS}: ${SRCS}
 	cc -c ${SRCS} ${FLAGS} libft.h
 
-test: ${OBJS}
-	cc -o TEST ${SRCS} ${FLAGS}
+bonus: ${B_OBJS}
+	ar rcs ${NAME} ${B_OBJS}
+
+${B_OBJS}: ${B_SRCS}
+	cc -c ${B_SRCS} ${FLAGS} libft.h
 
 clean:
 	rm -f ${OBJS}
+	rm -f ${B_OBJS}
 
 fclean: clean
 	rm -f ${NAME} TEST
 
 re: fclean all
 
-.PHONY: all clean fclean test
+.PHONY: all clean fclean bonus re

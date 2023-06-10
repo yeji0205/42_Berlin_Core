@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yegipark <yegipark@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yegpark <yegpark@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 00:38:03 by yegipark          #+#    #+#             */
-/*   Updated: 2023/05/27 01:35:29 by yegipark         ###   ########.fr       */
+/*   Updated: 2023/06/09 17:32:12 by yegpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *str)
 	size_t	i;
 
 	len = ft_strlen(str);
-	copy_str = (char *)malloc(1 * (len + 1));
+	copy_str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!copy_str)
 		return (0);
 	i = 0;
